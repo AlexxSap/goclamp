@@ -47,3 +47,31 @@ func TestFloatClamp(t *testing.T) {
 		})
 	}
 }
+
+func TestIntWithFunc(t *testing.T) {
+	actual := clampFunc(
+		3,
+		5,
+		7,
+		func(a, b int) bool {
+			return true
+		})
+	expected := 3
+	if actual != expected {
+		t.Errorf("act: %v, exp:%v", actual, expected)
+	}
+}
+
+func TestWithFuncOdd(t *testing.T) {
+	actual := clampFunc(
+		4,
+		7,
+		2,
+		func(a, b int) bool {
+			return a%b == 0
+		})
+	expected := 2
+	if actual != expected {
+		t.Errorf("act: %v, exp:%v", actual, expected)
+	}
+}
