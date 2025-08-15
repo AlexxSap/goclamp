@@ -11,10 +11,6 @@ clamp(3, 10, 11)  // = 10
 
 and `clampFunc` function with custom `Less` function
 ```go
-type Lesser interface {
-	Less(a, b any) bool
-}
-
 clampFunc(
 		4,
 		7,
