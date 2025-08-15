@@ -11,6 +11,8 @@ func TestIntClamp(t *testing.T) {
 		expected int
 	}{
 		{"simpleInto", 2, 7, 5, 5},
+		{"simpleMin", 2, 7, 1, 2},
+		{"simpleMax", 2, 7, 9, 7},
 	}
 
 	for _, test := range tests {
