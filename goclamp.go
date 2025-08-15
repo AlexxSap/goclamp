@@ -1,9 +1,13 @@
 package goclamp
 
-func clamp(min, max, value int) int {
-	if value < min {
+import (
+	"cmp"
+)
+
+func clamp[T cmp.Ordered](min, max, value T) T {
+	if cmp.Less(value, min) {
 		return min
-	} else if value > max {
+	} else if cmp.Less(max, value) {
 		return max
 	}
 	return value
