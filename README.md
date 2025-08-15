@@ -1,0 +1,2 @@
+# goclamp
+clamp for golang
